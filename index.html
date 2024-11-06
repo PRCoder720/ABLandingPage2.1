@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autobongs - Automatic Smokeleaf Devices</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background: url('https://static.wixstatic.com/media/11062b_edaa44193159442f9121785c886ac9f8f000.jpg/v1/fill/w_980,h_665,al_c,q_85,usm_0.33_1.00_0.00,enc_auto/11062b_edaa44193159442f9121785c886ac9f8f000.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            overflow-y: scroll;
+        }
+        header {
+            background-color: #1f1f1f;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        header h1 {
+            font-size: calc(2em * 2);
+            margin: 0;
+        }
+        .hero { background-image: url('https://static.wixstatic.com/media/11062b_edaa44193159442f9121785c886ac9f8f000.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+        .hero h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.1em;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            position: relative;
+            z-index: 1;
+        }
+        .product-card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+        }
+        .product-card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .product-card h3 {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .product-card p {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .vendor-signup {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            margin: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .vendor-signup h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .vendor-signup p {
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+        .vendor-signup form input[type="text"],
+        .vendor-signup form input[type="email"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            max-width: 100%;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #2b2b2b;
+            color: #e0e0e0;
+        }
+        .vendor-signup form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .vendor-signup form label {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .vendor-signup form input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        footer {
+            background-color: #1f1f1f;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .bubble {
+            position: absolute;
+            bottom: -50px;
+            background: rgba(135, 206, 235, 0.3);
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+        @keyframes bubble-animation {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            .hero h2 {
+                font-size: 1.8em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .product-card h3 {
+                font-size: 1.3em;
+            }
+            .product-card p {
+                font-size: 0.9em;
+            }
+            .vendor-signup h2 {
+                font-size: 1.5em;
+            }
+            .vendor-signup p {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation" id="animated-background"></div>
+    <header>
+        <h1>Autobongs</h1>
+        <p>The best in automatic smokeleaf-burning devices</p>
+    </header>
+
+    <section class="hero">
+        <h2>Experience Smooth Smoke, Effortlessly</h2>
+        <p>Discover the leading autobongs and elevate your smoking experience with ease and comfort.</p>
+    </section>
+
+    
+
+    <section class="vendor-signup">
+        <h2>Become a Vendor</h2>
+        <p>Join our network of vendors and start selling your products on Autobongs.</p>
+        <form>
+            <input type="text" name="vendor-name" placeholder="Your Name" required>
+            <input type="email" name="vendor-email" placeholder="Your Email" required>
+            <input type="text" name="vendor-info" placeholder="Vendor Information" required>
+            <label>
+                <input type="checkbox" name="subscribe" value="yes"> Yes, subscribe me to the email list
+            </label>
+            <button type="submit">Sign Up Now</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Copyright 2024 Autobongs LLC - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const animatedBackground = document.getElementById("animated-background");
+
+            const createBubble = () => {
+                const bubble = document.createElement("div");
+                bubble.className = "bubble";
+                bubble.style.left = Math.random() * 100 + "%";
+                bubble.style.width = Math.random() * 30 + 20 + "px";
+                bubble.style.height = bubble.style.width;
+                bubble.style.animation = `bubble-animation ${Math.random() * 3 + 5}s linear forwards`;
+
+                animatedBackground.appendChild(bubble);
+
+                bubble.addEventListener("animationend", () => {
+                    animatedBackground.removeChild(bubble);
+                });
+            };
+
+            setInterval(createBubble, 500);
+        });
+    </script>
+</body>
+</html>
